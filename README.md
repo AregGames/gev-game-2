@@ -1,92 +1,63 @@
-# Sound Labyrinth - 2D Лабиринт
+# Sound Labyrinth
 
-🎮 **Веб-игра - Хождение по лабиринту и избегание врагов**
+A Godot 4.6 2D maze game with random levels, enemies, mouse-controlled flashlight fog, pickups, buffs, and web export support.
 
-<img width="930" height="749" alt="image" src="https://github.com/user-attachments/assets/2c439606-fb35-4982-8997-2a9de60b05e7" />
+## Run
 
+Open the project in Godot:
 
-
-## 🎯 Концепт
-Ты находишься в темном лабиринте. Нужно найти выход (зеленый квадрат), избегая врагов (красные квадраты).
-
-## 🎮 Управление
-- **WASD** или **Стрелки** - движение
-- **Найди выход** (зеленый квадрат внизу справа)
-- **Избегай врагов** (красные квадраты)
-
-## 🧠 Игровая механика
-1. Ты (зеленый квадрат) начинаешь в левом верхнем углу
-2. Враги (красные квадраты) патрулируют лабиринт
-3. Враги видят тебя на расстоянии 150 пикселей и начинают преследовать
-4. Найди выход и избежи врагов
-5. У тебя 3 жизни
-
-## 🏗️ Как запустить
-
-### Способ 1: Локально
-1. Откройте файл `index.html` в браузере (двойной клик)
-2. Или запустите локальный сервер:
-```bash
-# Если есть Python
-python -m http.server 8000
-
-# Или Node.js
-npx http-server
+```powershell
+.\open-godot.ps1
 ```
 
-### Способ 2: VS Code Live Server
-1. Установите расширение "Live Server"
-2. Right-click на `index.html`
-3. Выберите "Open with Live Server"
+Or run Godot directly:
 
-## 📁 Структура проекта
-```
-gev-game-2/
-├── index.html         # Главная страница
-├── style.css          # Стили
-├── game.js            # Основная логика игры
-├── player.js          # Логика игрока
-├── enemy.js           # Логика врагов
-├── game-map.js        # Генерация лабиринта
-└── README.md          # Документация
+```powershell
+godot --path . --editor
 ```
 
-## 🎯 Игровые характеристики
+Press Play in the editor. The main scene is `res://scenes/level.tscn`.
 
-| Параметр | Значение |
-|----------|----------|
-| Размер игрока | 15px |
-| Скорость игрока | 3 пикс/кадр |
-| Размер врага | 15px |
-| Скорость врага | 1.5 пикс/кадр |
-| Дальность видения врага | 150 пикселей |
-| Жизни игрока | 3 |
-| Размер клетки лабиринта | 50x50px |
+## Controls
 
-## 🎨 Цвета
-- 🟩 **Зеленый** - Игрок (здоровый)
-- 🟥 **Красный** - Враги (агрессивный режим)
-- 🟧 **Оранжевый** - Враги (нормальный режим)
-- 🟩 **Зеленый** - Выход
-- ⬛ **Серый** - Стены
-- ⬛ **Черный** - Проходы
+- `WASD` or arrow keys: move
+- Mouse: aim flashlight
 
-## 💡 Советы для игрока
-1. Враги видят тебя только на расстоянии 150 пикселей
-2. Используй стены лабиринта для укрытия
-3. Двигайся осторожно в начале
-4. Помни, враги быстрее думают, чем ты :)
+## Gameplay
 
-## 🚀 Будущие улучшения
-- [ ] Несколько уровней сложности
-- [ ] Power-ups и бонусы
-- [ ] Таблица лидеров
-- [ ] Режимы игры (survival, time attack)
-- [ ] Улучшенная AI врагов
-- [ ] Звуковые эффекты и музыка
-- [ ] Мобильная поддержка
+- Reach the green exit to advance to the next randomly generated level.
+- Avoid enemies.
+- Pick up buffs:
+  - `+`: heal
+  - `S`: speed boost
+  - `L`: stronger flashlight
+  - `O`: shield
 
----
+## Web Export
 
-**Создано на JavaScript + Canvas**
+The project includes a Godot `Web` export preset.
 
+In Godot:
+
+```text
+Project -> Export -> Web -> Export Project
+```
+
+The configured output path is:
+
+```text
+web/index.html
+```
+
+Serve the `web/` folder with a static server after export.
+
+## Project Structure
+
+```text
+project.godot
+scenes/level.tscn
+scripts/level.gd
+export_presets.cfg
+open-godot.ps1
+icon.svg
+```
