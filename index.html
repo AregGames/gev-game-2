@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Labyrinth - 2D Maze</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Sound Labyrinth</h1>
+        <div class="stats">
+            <div>Жизни: <span id="health">3</span></div>
+            <div>Уровень: <span id="level">1</span></div>
+            <div>Время: <span id="time">0</span>s</div>
+        </div>
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+        <div class="controls">
+            <p><strong>Управление:</strong></p>
+            <p>⬆️ W - вверх | ⬇️ S - вниз | ⬅️ A - влево | ➡️ D - вправо</p>
+            <p>Найди выход! Избегай врагов (красные квадраты)</p>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
