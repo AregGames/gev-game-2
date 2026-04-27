@@ -1,9 +1,22 @@
 $ErrorActionPreference = 'Stop'
 
 $projectPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-$godotCommand = Get-Command godot -ErrorAction SilentlyContinue
+$projectFile = Join-Path $projectPath 'project.godot'
+$godotExe = 'C:\godot\Godot_v4.6.2-stable_win64.exe'
 $fallbackGodot = 'C:\godot\godot.cmd'
 
+if (-not (Test-Path $projectFile)) {
+    Write-Error "No project.godot found at $projectPath"
+}
+
+Set-Location $projectPath
+
+if (Test-Path $godotExe) {
+    & $godotExe --path $projectPath --editor
+    exit $LASTEXITCODE
+}
+
+$godotCommand = Get-Command godot -ErrorAction SilentlyContinue
 if ($godotCommand) {
     & $godotCommand.Source --path $projectPath --editor
     exit $LASTEXITCODE
@@ -14,4 +27,4 @@ if (Test-Path $fallbackGodot) {
     exit $LASTEXITCODE
 }
 
-Write-Error 'Godot was not found. Add Godot to PATH or install it at C:\godot\godot.cmd.'
+Write-Error 'Godot was not found. Install it at C:\godot or add it to PATH.'
