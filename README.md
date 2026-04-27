@@ -2,7 +2,8 @@
 
 🎮 **Веб-игра - Хождение по лабиринту и избегание врагов**
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/81077a58-9542-479f-9d49-b4fe3dbf3027" />
+<img width="930" height="749" alt="image" src="https://github.com/user-attachments/assets/2c439606-fb35-4982-8997-2a9de60b05e7" />
+
 
 
 ## 🎯 Концепт
