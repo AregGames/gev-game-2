@@ -22,6 +22,7 @@ Press Play in the editor. The main scene is `res://scenes/level.tscn`.
 
 - `WASD` or arrow keys: move
 - Mouse: aim flashlight
+- `1`: sword attack
 
 ## Gameplay
 
